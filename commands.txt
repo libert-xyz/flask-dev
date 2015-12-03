@@ -1,0 +1,27 @@
+pip freeze > requirements.txt
+
+pip install flask_migrate
+
+python manage.py db --help
+
+git push heroku master
+heroku run python manage.py db upgrade
+heroku pg:psql
+
+
+export APP_SETTINGS='config.DevelopmentConfig'
+
+
+export DATABASE_URL='postgresql://postgres:mysecretpassword@172.17.0.12/discover_flask_dev'
+
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade
+
+
+##virtualenvwrapper
+
+  #mkvirtualenv venv
+  #workon venv
+
+  #vim ~/.virtualenvs/venv/bin/postactivate

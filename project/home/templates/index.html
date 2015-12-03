@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome </h1>
+<h3> {{ session['name'] }}  </h3>
+<br>
+<p>Click <a href="/logout">here</a> to logout.</p>
+
+<br><br>
+
+<h3>Posts</h3>
+
+{% for post in posts %}
+
+  <strong>Title:</strong> {{post.title}} <br>
+  <strong>Description:</strong> {{post.description}} <br>
+<div class="text-muted">Posted by {{post.author.name}}</div>
+
+  <br><br>
+
+{% endfor %}
+
+{% endblock%}
